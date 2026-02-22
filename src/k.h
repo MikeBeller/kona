@@ -13,6 +13,8 @@ extern __thread I fer1;
 extern I fnci;
 extern S recur(S x);
 extern __thread K prnt;
+extern K stopDict;
+extern I fStop;
 
 #if defined(DEBUG)
 extern V krec[1000000];

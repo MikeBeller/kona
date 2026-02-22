@@ -214,9 +214,13 @@ I check()
   I ofCheck=fCheck;
   if(fnc)*ofnc=*fnc;
   kerr("(nil)"); prompt(++fCheck); S a=0;  I n=0;  PDA q=0;
+  I ofStop=fStop; if(stopDict && !fStop) fStop=1;
   for(;;)
   { line(stdin, &a, &n, &q);
-    if(fCheck==ofCheck) R 0; } }
+    if(fCheck==ofCheck)
+    { fStop=ofStop;
+      if(!ofStop && stopDict){ cd(stopDict); stopDict=0; }
+      R 0; } } }
 
 Z I fln=0;
 I lines(FILE*f)

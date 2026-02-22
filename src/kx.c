@@ -556,6 +556,7 @@ K vf_ex(V q, K g)
 
           if(stk1>1e3) { cd(g); kerr("stack"); R _n(); }
           ci(fw); stk1++; z=ex(fw); stk1--;
+          if(fer==2 && !fCheck && !stopDict){ K ct=kclone(tree); if(ct) stopDict=ct; }
           DO(p->n, e=EVP(DI(tree,i)); cd(*e); *e=0; )
           stk--; ) }
   if(encp==2)
